@@ -8,6 +8,7 @@
           <input v-model="state.email" class="form-control mt-2" type="email" name="" id="" placeholder="Email" />
           <input v-model="state.password" class="form-control mt-2" type="password" name="" id="" placeholder="Password" />
           <input v-model="state.edad" class="form-control mt-2" type="number" name="" id="" placeholder="Edad" />
+          <button class="btn btn-success mt-2" @click="verificaCredenciales">Validar</button>
         </div>
       </div>
       <div class="col-md-6">
@@ -30,15 +31,38 @@ export default {
     setup() {
         // Definición de variables
         const state = reactive({
-            username:'Federico',
-            email:'fede23@gmail.com',
-            password:'12345',
-            edad:23,
+            username:'',
+            email:'',
+            password:'',
+            edad:0,
         });
+
+        // Métodos
+
+        const verificaCredenciales = () => {
+
+          const credenciales = {
+            username: '@user',
+            paswword: 'secret',
+          }
+
+          let mensaje = "";
+
+          if (state.username === credenciales.username && 
+              state.password === credenciales.paswword){
+                mensaje = "Credenciales Correctas";
+              }
+          else{
+                mensaje = "Credenciales Incorrectas";
+          }
+
+          alert(mensaje);
+        };  
 
 
         return { 
-            state
+            state,
+            verificaCredenciales
         }
         
     }

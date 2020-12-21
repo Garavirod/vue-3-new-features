@@ -10,20 +10,9 @@
       <!-- MÉTODOS -->
       <Methods/>
       <!-- DIRECTIVA V-MODEL -->
-      <Dirmodel/>
-      
-     
+      <Dirmodel/>           
       <!-- DIRECTIVA V-FOR -->
-      <div class="col-md-12 mt-4">
-        <h2>Arrays</h2>
-        <input type="checkbox" name="" id="" v-model="frames" value="Django" />
-        <label for="">Django</label>
-        <input type="checkbox" name="" id="" v-model="frames" value="Laravel" />
-        <label for="">Laravel</label>
-        <input type="checkbox" name="" id="" v-model="frames" value="ASP" />
-        <label for="">ASP</label>
-        <p>{{ frames }}</p>
-      </div>
+      <Arrays/>      
 
       <!-- DIRECTIVA V-IF V-ELSE -->
 
@@ -72,6 +61,7 @@ import APIBBad from '@/components/APIBBad';
 import Values from '@/components/Values';
 import Methods from './components/Methods';
 import Dirmodel from './components/DirModel';
+import Arrays from './components/Arrays.vue';
 export default {
   components: {
     Parent,
@@ -80,7 +70,8 @@ export default {
     APIBBad,
     Values,
     Methods,
-    Dirmodel,    
+    Dirmodel,
+    Arrays,    
   },
   /* 
     Setup funciona como un obj que devueelve las pripiedades 
