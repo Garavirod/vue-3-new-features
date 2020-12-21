@@ -8,12 +8,7 @@
       <!-- VALUES -->
       <Values/>
       <!-- MÉTODOS -->
-      <div class="col-md-12 mt-4">
-        <h2>Methods</h2>
-        <button 
-          class="btn btn-primary"
-          @click="helloUser">Push me</button>
-      </div>
+      <Methods/>
       <!-- DIRECTIVA V-MODEL -->
       <div class="col-md-12 mt-4">
         <h2>V-model</h2>
@@ -77,13 +72,15 @@ import LoginForm from "@/components/LoginForm";
 import APIFetch from "./components/APIFetch";
 import APIBBad from '@/components/APIBBad';
 import Values from '@/components/Values';
+import Methods from './components/Methods.vue';
 export default {
   components: {
     Parent,
     LoginForm,
     APIFetch,
     APIBBad,
-    Values    
+    Values,
+    Methods,    
   },
   /* 
     Setup funciona como un obj que devueelve las pripiedades 
