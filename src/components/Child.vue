@@ -7,6 +7,14 @@
         <p>my parent says : {{$parent.parentMessage}}</p>
 
         <button @click="$parent.callParent">Call for parent</button>
+
+        <p>My props</p>
+        <ul>
+            <li>{{money}}</li>
+            <li>{{car}}</li>
+            <li>{{advice}}</li>
+        </ul>
+
     </div>
 </template>
 
@@ -16,17 +24,21 @@
     export default {
         name:'Child',
         emits:['messageFromChild'],
+        props:{
+            money:Number,
+            car: Boolean,
+            advice:String,
+        },
         setup(props, { emit }) {
 
             const message = ref("Hi parent");
             const greetsParent = ( ) => {
                 emit( 'messageFromChild', message.value );
-            }
-
+            }            
 
             return{
                 message,
-                greetsParent,                                
+                greetsParent,                                                
             }
         }        
     }

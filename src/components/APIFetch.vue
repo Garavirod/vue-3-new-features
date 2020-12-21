@@ -4,6 +4,7 @@
             <li v-for="user in users" :key="user.id">{{user.name}} {{user.email}}</li>
         </ul>
         <p v-else>There are not users</p>
+        <!-- {{state}} -->
     </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
             users.value = await response.json();
         });
 
-        return { users };
+        return  { users };
     }
 
 }

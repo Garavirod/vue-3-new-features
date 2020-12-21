@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { provideProfile, useProfile } from "@/plugins/profile";
+import { provideProfile, useProfile } from "@/plugins/useProfile";
 export default {
   setup() {
     provideProfile({
