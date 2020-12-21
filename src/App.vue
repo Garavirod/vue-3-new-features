@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 text-center">
         <h1>Conceptos básicos de VUE 3</h1>
       </div>
       <hr>
@@ -10,11 +10,9 @@
       <!-- MÉTODOS -->
       <Methods/>
       <!-- DIRECTIVA V-MODEL -->
-      <div class="col-md-12 mt-4">
-        <h2>V-model</h2>
-        <input type="text" name="" id="" v-model="frameWork" />
-        <p>You chose {{ frameWork }}</p>
-      </div>
+      <Dirmodel/>
+      
+     
       <!-- DIRECTIVA V-FOR -->
       <div class="col-md-12 mt-4">
         <h2>Arrays</h2>
@@ -72,7 +70,8 @@ import LoginForm from "@/components/LoginForm";
 import APIFetch from "./components/APIFetch";
 import APIBBad from '@/components/APIBBad';
 import Values from '@/components/Values';
-import Methods from './components/Methods.vue';
+import Methods from './components/Methods';
+import Dirmodel from './components/DirModel';
 export default {
   components: {
     Parent,
@@ -80,7 +79,8 @@ export default {
     APIFetch,
     APIBBad,
     Values,
-    Methods,    
+    Methods,
+    Dirmodel,    
   },
   /* 
     Setup funciona como un obj que devueelve las pripiedades 
