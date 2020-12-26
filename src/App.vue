@@ -14,11 +14,9 @@
       <!-- DIRECTIVA V-FOR -->
       <Arrays/>      
       <!-- DIRECTIVA V-IF V-ELSE V-SHOW -->
-      <Showif/>
-      
-
+      <Showif/>      
       <!-- DIRECTIVA V-BIND -->
-
+      <Binds/>      
       <!-- DIRERIVA V-ON -->
 
       <!-- WATCHER -->
@@ -62,6 +60,7 @@ import Methods from './components/Methods';
 import Dirmodel from './components/DirModel';
 import Arrays from './components/Arrays.vue';
 import Showif from './components/ShowIf';
+import Binds from './components/Binds';
 export default {
   components: {
     Parent,
@@ -72,7 +71,8 @@ export default {
     Methods,
     Dirmodel,
     Arrays,
-    Showif,    
+    Showif,
+    Binds    
   },
   /* 
     Setup funciona como un obj que devueelve las pripiedades 
