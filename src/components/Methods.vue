@@ -41,44 +41,27 @@
 
 
 <script>
-import {ref} from 'vue';
+import useCounter from '@/hooks/useCounter'
 export default {
     setup() {
         
-        // Definición de variables
-        const numero = ref(100);
-
-        // Métodos
-        /* 
-            Los métodos son subprogramas/funciones o bloques de codigo 
-            que aplican lógica sobre ciertas propiedades del template
-        */
-        const suma = () => {
-            numero.value += 5;
-        }
-
-        const resta = () => {
-            numero.value -= 5;
-        }
-
-        const multiplicar = () => {
-            numero.value *= 5;
-        }
-
-        const reset = () => {
-            if(numero.value >= 5000){
-                numero.value = 0;
-            }
-        }
-
-        // retornar todo aquello que se desea usar en el template
-        return { 
+       const {
             numero,
             suma,
             resta,
             multiplicar,
             reset
-        }
+
+       } = useCounter( 2 )
+
+
+       return{
+            numero,
+            suma,
+            resta,
+            multiplicar,
+            reset
+       }
     }
 }
 </script>
