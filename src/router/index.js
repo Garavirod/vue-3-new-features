@@ -1,6 +1,8 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import Users from '../views/Users'
 import Features from '../views/Features'
+import Search from '../views/Search'
+import Pokemon from '../views/Pokemon'
 const routes = [
     {
         path:'/',
@@ -10,6 +12,17 @@ const routes = [
     {
         path:'/api-users',
         component:Users,        
+    },
+
+    {
+        path:'/search',
+        component:Search,        
+    },
+
+    {
+        path:'/pokemon/:id',
+        name:'pokemon-detail',
+        component:Pokemon,        
     },
 
 ]
