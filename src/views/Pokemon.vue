@@ -13,7 +13,7 @@
 
 <script>
 import usePokemon from '@/hooks/usePokemon'
-import { useRoute } from 'vue-router'
+import { onBeforeRouteLeave, useRoute } from 'vue-router'
 import { watch } from 'vue'
 export default {
     name:'Pokemon',
@@ -32,6 +32,14 @@ export default {
             () => route.params.id, // when 'route.params.id' gets change
             (/* value, prevValue */) => searchPokemon( route.params.id )            
         )
+
+        // Lifecycle
+
+        //routes changes
+        onBeforeRouteLeave( () => {
+            const ans = window.confirm("Are you sure you want to leave ?")
+            if( !ans ) return false // if return false route is going to be bloked
+        })
 
         return {
             pokemon,
