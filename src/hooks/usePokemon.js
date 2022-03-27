@@ -7,12 +7,15 @@ const usePokemon = ( pokemonid = '1') => {
     let errorMessage = ref()
 
 
-    const searchPokemon = async () => {
+    const searchPokemon = async ( id ) => {
+
+        if( !id ) return
+
         isLoadding.value = true
         pokemon.value = null
 
         try {
-            const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonid}`)
+            const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             pokemon.value = data
             errorMessage.value = null
         } catch (error) {
@@ -22,12 +25,13 @@ const usePokemon = ( pokemonid = '1') => {
         isLoadding = false
     }
 
-    searchPokemon()
+    searchPokemon( pokemonid )
 
     return{
         pokemon,
         isLoadding,
-        errorMessage
+        errorMessage,
+        searchPokemon
     }
 
 }

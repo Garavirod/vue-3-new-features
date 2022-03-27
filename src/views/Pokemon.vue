@@ -14,6 +14,7 @@
 <script>
 import usePokemon from '@/hooks/usePokemon'
 import { useRoute } from 'vue-router'
+import { watch } from 'vue'
 export default {
     name:'Pokemon',
 
@@ -22,10 +23,16 @@ export default {
         const {
             pokemon,
             isLoadding,
-            errorMessage
+            errorMessage,
+            searchPokemon
         } = usePokemon( route.params.id )
 
-        console.log(pokemon);
+        
+        watch( 
+            () => route.params.id, // when 'route.params.id' gets change
+            (/* value, prevValue */) => searchPokemon( route.params.id )            
+        )
+
         return {
             pokemon,
             isLoadding,
