@@ -16,7 +16,8 @@ const routes = [
 
     {
         path:'/search',
-        component:Search,        
+        component:Search,
+        name:'pokemon-search'        
     },
 
     {
